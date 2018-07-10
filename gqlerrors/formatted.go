@@ -7,8 +7,10 @@ import (
 )
 
 type FormattedError struct {
-	Message   string                    `json:"message"`
-	Locations []location.SourceLocation `json:"locations"`
+	Message    string                    `json:"message"`
+	Locations  []location.SourceLocation `json:"locations"`
+	Path       []interface{}		   	 `json:"path,omitempty"`
+	Extensions interface{}	   			 `json:"extensions,omitempty"`
 }
 
 func (g FormattedError) Error() string {
